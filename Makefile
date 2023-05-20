@@ -17,10 +17,10 @@ update-force: ## Forcefully pull all changes and don't ask to patch
 	git checkout upstream/hugo -- layouts .github Makefile assets/js assets/styles/base.scss assets/styles/darkmode.scss config.toml data
 
 prepare: ## prepare commands
-	find /Users/sspaeti/Documents/git/sspaeti.com/second-brain-public/content -type f -not -name ".git" -delete
+	find ~/git/second-brain-public/content -type f -not -name ".git" -delete
 	python utils/find-publish-notes.py #copy all notes from my secondbrain with hashtag #publish to quartz
 	rm -r public
-	hugo-obsidian -input=content -output=assets/indices -index -root=. 
+	~/go/bin/hugo-obsidian -input=content -output=assets/indices -index -root=. 
 	python utils/lower_case.py #change linkIndex to lowercase for proper linking
 
 run: ## run hugo from a clean state
