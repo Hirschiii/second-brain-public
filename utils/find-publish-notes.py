@@ -44,27 +44,27 @@ def find_hashtag(second_brain_path: str, copy_to_path: str) -> None:
             if file.endswith(".md"):
                 print("Copy file: ", file)
                 file_path = os.path.join(root, file)
-                # with open(file_path, "r") as f:
-                #     for line_number, line in reversed(list(enumerate(f, 1))):
-                #         if "#publish" in line:
-                # destination should be lower-case (spaces will be handled by hugo with `urlize`)
-                file_name_lower = os.path.basename(file_path).lower()
+                with open(file_path, "r") as f:
+                    for line_number, line in reversed(list(enumerate(f, 1))):
+                        if "#publish" in line:
+                            # destination should be lower-case (spaces will be handled by hugo with `urlize`)
+                            file_name_lower = os.path.basename(file_path).lower()
 
-                # print(f"publish: {file_path}, ln: {line_number}")
-                # copy that file to the publish notes directory
-                print("COpy to: ", copy_to_path)
-                shutil.copy(
-                        file_path, os.path.join(copy_to_path, file_name_lower)
-                        )
-                # get last modified date file_path
-                last_modified = datetime.utcfromtimestamp(
-                        os.path.getmtime(file_path)
-                        ).strftime("%Y-%m-%d %H:%M:%S")
+                            # print(f"publish: {file_path}, ln: {line_number}")
+                            # copy that file to the publish notes directory
+                            print
+                            shutil.copy(
+                                    file_path, os.path.join(copy_to_path, file_name_lower)
+                                    )
+                            # get last modified date file_path
+                            last_modified = datetime.utcfromtimestamp(
+                                    os.path.getmtime(file_path)
+                                    ).strftime("%Y-%m-%d %H:%M:%S")
 
-                # add h1 as title frontmatter
-                # add_h1_as_title_frontmatter(
-                #     os.path.join(copy_to_path, file), last_modified
-                # )
+                            # add h1 as title frontmatter
+                            # add_h1_as_title_frontmatter(
+                            #     os.path.join(copy_to_path, file), last_modified
+                            # )
                             # break
 
 

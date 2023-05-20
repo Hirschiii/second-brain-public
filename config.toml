@@ -1,6 +1,6 @@
 baseURL = "https://brain.sspaeti.com"
-languageCode = "en-us"
-googleAnalytics = "G-PH3D1NNYSE"
+languageCode = "de-de"
+# googleAnalytics = "G-PH3D1NNYSE"
 relativeURLs = false
 disablePathToLower = true
 # ignoreFiles = [
@@ -15,7 +15,7 @@ enableGitInfo = true
     [markup.tableOfContents]
         endLevel = 3
         ordered = true
-        startLevel = 2
+        startLevel = 1
     [markup.highlight]
         noClasses = false
         anchorLineNos = false

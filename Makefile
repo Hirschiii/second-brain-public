@@ -30,9 +30,11 @@ hugo-generate: ## generate hugo from clean but don't run
 	hugo --gc && hugo
 
 upload: ## upload to server 
-	rsync -avz --delete public/ sspaeti@sspaeti.com:~/www/brain
+	# sshpass -p $(pass gulugulu@aegaeon.uberspace.de) rsync -avz --delete public/ gulugulu@aegaeon.uberspace.de:/home/gulugulu/html/brain.vonhirschfeld.eu
+	rsync -avz --delete public/ gulugulu@aegaeon.uberspace.de:/home/gulugulu/html/brain.vonhirschfeld.eu
 
 serve: prepare run
+serve-only: run
 
 upload-only: hugo-generate upload
 deploy: prepare hugo-generate upload
